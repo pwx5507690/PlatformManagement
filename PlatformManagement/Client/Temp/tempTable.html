@@ -1,0 +1,47 @@
+﻿<table class="am-table am-table-striped am-table-hover table-main">
+    <thead>
+        <tr>
+            <th ng-if="value.checkbox" class="table-check">
+                <input ng-model="checked" type="checkbox" />
+            </th>
+            <th ng-repeat="it in value.title" ng-bind="it.name"></th>
+            <th ng-if="value.action"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-if="isData">
+            <td colspan="{{value.title.length + (value.action ? 1 : 0)}}" ng-bind="value.empty" class="text-center"></td>
+        </tr>
+        <tr ng-repeat="it in context">
+            <td ng-if="value.checkbox">
+                <input  checked="{{checked}}" ng-model="checkboxs[it.Value[value.key]]" type="checkbox" />
+            </td>
+            <td ng-repeat="item in value.title" ng-bind="it.Value[item.key]"></td>
+            <td ng-if="value.action">
+                <div class="am-btn-toolbar">
+                    <div class="am-btn-group am-btn-group-xs">
+                        <a ng-click="info(it.Value[value.key])" ng-if="value.action.info" class="am-btn am-btn-default am-btn-xs am-text-secondary">
+                            <span class="am-icon-pencil-square-o"></span>详细
+                        </a>
+                        <a ng-click="value.deleteAll(it.Value[value.key])" ng-if="value.action.delete" class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only">
+                            <span class="am-icon-trash-o"></span> 删除
+                        </a>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+
+<div class="am-cf">
+    <!--共 15 条记录-->
+    <div class="am-fr">
+        <ul class="am-pagination">
+            <li ng-repeat="p in pager" ng-class="p.className">
+                <a ng-bind="p.name" ng-click="page(p.value)"></a>
+            </li>
+           
+        </ul>
+    </div>
+</div>

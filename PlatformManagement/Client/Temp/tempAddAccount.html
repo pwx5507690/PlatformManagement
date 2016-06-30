@@ -1,0 +1,138 @@
+﻿<div ng-init="accountOptionInit()" class="am-g" ng-controller="account">
+    <div class="am-cf am-padding am-padding-bottom-0">
+        <div class="am-fl am-cf">
+            <strong class="am-text-primary am-text-lg" ng-bind="titleCName"></strong> /
+            <small ng-bind="titleEName"></small>
+        </div>
+    </div>
+    <hr />
+    <div ng-class="saveTip" style="display:none" ng-style="saveShow" data-am-alert>
+        <button type="button" class="am-close">&times;</button>
+        <p ng-bind="saveMessage"></p>
+    </div>
+    <div class="am-u-sm-12 am-u-md-8">
+        <form class="am-form am-form-horizontal">
+            <div class="am-form-group">
+                <label class="am-u-sm-3 am-form-label">昵称 / Account Name</label>
+                <div class="am-u-sm-9">
+                    <input type="text" ng-model="name" placeholder="昵称 / Account Name">
+                    <small>昵称</small>
+                </div>
+            </div>
+            <div class="am-form-group">
+                <label class="am-u-sm-3 am-form-label">姓名 / User Name</label>
+                <div class="am-u-sm-9">
+                    <input type="password" ng-model="userName" placeholder="姓名 / Name">
+                    <small>姓名</small>
+                </div>
+            </div>
+            <div ng-style="passWordStyle" class="am-form-group">
+                <label class="am-u-sm-3 am-form-label">密码 / Password</label>
+                <div class="am-u-sm-9">
+                    <input ng-model="password" type="password" placeholder="密码 / password">
+                    <small>密码</small>
+                </div>
+            </div>
+            <div ng-style="passWordStyle" class="am-form-group">
+                <label class="am-u-sm-3 am-form-label">密码确认 / Confirm password</label>
+                <div class="am-u-sm-9" style="padding-bottom:0">
+                    <input type="password" ng-model="conPassword" placeholder="密码确认 / Confirm password">
+                    <small>密码确认</small>`
+                </div>
+            </div>
+            <div class="am-form-group">
+                <label class="am-u-sm-3 am-form-label">邮箱 / Mail</label>
+                <div class="am-u-sm-9" style="padding-bottom:0">
+                    <input type="text" ng-model="mail" placeholder="邮箱 / Mail">
+
+                </div>
+            </div>
+
+            <div class="am-form-group">
+                <label class="am-u-sm-3 am-form-label">出生年月 / Birthday</label>
+                <div class="am-u-sm-9" style="padding-bottom:0">
+                    <input type="date" ng-model="age" placeholder="出生年月 / Birthday">
+                </div>
+            </div>
+
+            <div class="am-form-group">
+                <label class="am-u-sm-3 am-form-label">靓照 / Photo</label>
+                <div class="am-u-sm-9">
+                    <input name="img" type="text" ng-model="img" class="span6 m-wrap">
+                </div>
+            </div>
+
+            <div class="am-form-group">
+                <div class="am-u-sm-9 am-u-sm-push-3">
+                    <button type="button" ng-click="sub()" class="am-btn am-btn-primary">保存修改</button>
+                    <button type="button" ng-click="goBack()" class="am-btn am-btn-primary">返回</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+    <!--<fieldset>
+
+        <div class="alert alert-error ng-hide" ng-show="error">
+            <button class="close"></button>
+            {{errorMes}}
+        </div>
+        <div class="alert alert-success ng-hide" ng-show="success">
+            <button class="close"></button>
+            保存成功
+        </div>
+        <div class="control-group">
+            <label class="control-label">昵称<span class="required">*</span></label>
+            <div class="controls">
+                <input type="text" name="name" ng-model="name" class="span6 m-wrap">
+                <span ng-bind="nameText" ng-style="nameStyle" class="help-block"></span>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label">密码<span class="required">*</span></label>
+            <div class="controls">
+                <input type="password" name="password" ng-model="password" class="span6 m-wrap">
+                <span ng-bind="passwordText" ng-style="passwordStyle" class="help-block"></span>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">密码确认<span class="required">*</span></label>
+            <div class="controls">
+                <input type="password" name="conPassword" ng-model="conPassword" class="span6 m-wrap">
+                <span ng-bind="conPasswordText" ng-style="conPasswordStyle" class="help-block"></span>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Mail</label>
+            <div class="controls">
+                <input type="text" name="mail" ng-model="mail" class="span6 m-wrap">
+            </div>
+        </div>
+        <div ng-bind-template="" class="control-group">
+            <label class="control-label">出生年月</label>
+            <div class="controls">
+                <input name="age" type="text" ng-model="age" class="span6 m-wrap">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">地址</label>
+            <div class="controls">
+                <input name="address" type="text" ng-model="address" class="span6 m-wrap">
+
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">靓照</label>
+            <div class="controls">
+                <input name="img" type="text" ng-model="img" class="span6 m-wrap">
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <button type="button" ng-click="submit()" class="btn btn-primary">提交</button>
+            <button type="button" ng-click="back()" class="btn">返回</button>
+        </div>
+    </fieldset>-->
+</div>

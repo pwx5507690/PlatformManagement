@@ -1,0 +1,31 @@
+﻿
+<div class="am-g">
+    <div ng-if="toolbar.action" class="am-u-sm-12 am-u-md-6">
+        <div class="am-btn-toolbar">
+            <div class="am-btn-group am-btn-group-xs">
+                <button type="button" ng-click="toolbar.action.add()" ng-if="toolbar.action.add" class="am-btn am-btn-default"><span class="am-icon-plus"></span> 新增</button> 
+                <button type="button" ng-click="toolbar.action.delete()" class="am-btn am-btn-default"><span class="am-icon-trash-o"></span> 删除</button>
+            </div>
+        </div>
+    </div>
+
+    <div ng-if="toolbar.seach.category" ng-repeat="category in toolbar.seach.category" class="am-u-sm-12 am-u-md-1">
+        <div class="am-form-group" >
+            <select ng-init="end($last)" ng-change="changeRequest(category.name)"
+                    ng-model="selecteds[category.name]"
+                    data-am-selected>
+                <option ng-repeat="it in category.item"
+                        value="{{it.value}}"
+                        ng-bind="it.text"></option>
+            </select>
+        </div>
+    </div>
+    <div ng-if="toolbar.seach.request" class="am-u-sm-12 am-u-md-3">
+        <div class="am-input-group am-input-group-sm">
+            <input ng-model="searchValue" type="text" class="am-form-field">
+            <span class="am-input-group-btn">
+                <button class="am-btn am-btn-default" ng-click="toolbar.seach.request(searchValue)" type="button">搜索</button>
+            </span>
+        </div>
+    </div>
+</div>

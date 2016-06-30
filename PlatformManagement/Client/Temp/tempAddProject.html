@@ -1,0 +1,66 @@
+﻿<div ng-init="projectOptionInit()" class="am-g" ng-controller="project">
+    <div class="am-cf am-padding am-padding-bottom-0">
+        <div class="am-fl am-cf">
+            <strong class="am-text-primary am-text-lg" ng-bind="titleCName"></strong> /
+            <small ng-bind="titleEName"></small>
+        </div>
+    </div>
+    <hr />
+    <div ng-class="saveTip" style="display:none" ng-style="saveShow" data-am-alert>
+        <button type="button" class="am-close">&times;</button>
+        <p ng-bind="saveMessage"></p>
+    </div>
+    <div class="am-u-sm-12 am-u-md-8">
+        <form class="am-form am-form-horizontal">
+            <div class="am-form-group">
+                <label for="user-name" class="am-u-sm-3 am-form-label">工程 / Project Name</label>
+                <div class="am-u-sm-9">
+                    <input type="text" ng-model="projectName" placeholder="工程名称 / Project Name">
+
+                </div>
+            </div>
+            <div class="am-form-group">
+                <label for="user-email" class="am-u-sm-3 am-form-label">模块分配 / Model</label>
+                <div class="am-u-sm-9">
+                    <input ng-model="model" ng-click="createModel()" type="text" readonly="readonly" placeholder="模块分配 / Model">
+                    <small>模块...</small>
+                </div>
+            </div>
+            <div class="am-form-group">
+                <label for="user-phone" class="am-u-sm-3 am-form-label">金额 / Money</label>
+                <div class="am-u-sm-9" style="padding-bottom:0">
+                    <div class="am-input-group">
+                        <input type="number" ng-model="money" placeholder="金额 / Money">
+                        <span class="am-input-group-label">￥</span>
+                    </div>
+                    <small>金额(RMB)</small>`
+                </div>
+            </div>
+            <div class="am-form-group">
+                <label class="am-u-sm-3 am-form-label">成员 / Member</label>
+                <div class="am-u-sm-9">
+                    <select ng-model="member" multiple data-am-selected>
+                        <option ng-repeat="item in members" value="{{item.Value.Id}}">{{item.Value.AccountName}}</option>
+                     
+                    </select>
+                </div>
+            </div>
+            <div class="am-form-group">
+                <label class="am-u-sm-3 am-form-label">开发周期 / Total Time</label>
+                <div class="am-u-sm-9">
+                    <div class="am-input-group">
+                        <input type="number" ng-model="totalTime" placeholder="开发周期 / Total Time">
+                        <span class="am-input-group-label">天</span>
+                    </div>`
+                </div>
+            </div>
+
+            <div class="am-form-group">
+                <div class="am-u-sm-9 am-u-sm-push-3">
+                    <button type="button" ng-click="sub()" class="am-btn am-btn-primary">保存修改</button>
+                    <button type="button" ng-click="goBack()" class="am-btn am-btn-primary">返回</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

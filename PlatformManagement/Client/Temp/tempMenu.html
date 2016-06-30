@@ -1,0 +1,43 @@
+﻿<form class="form-horizontal" ng-init="init()" ng-controller="menuController"
+      name="menu">
+    <div class="container ">
+        <div class="alert alert-success" ng-show="success" role="alert">{{successMes}}</div>
+        <div class="alert alert-warning" ng-show="error" role="alert">{{errorMes}}</div>
+        <div class="form-group">
+            <label for="title" class="col-sm-2 control-label">标题</label>
+            <div class="col-sm-6">
+                <input name="title" ng-model="title" type="text" class="form-control" placeholder="标题">
+            </div>
+            <span class="col-sm-4 control-label" style="color:red;text-align:left" ng-show="isShowTitle">
+                <label ng-show="isShowTitle">{{errorMessage1}}</label>
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">路径</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" name="url" ng-model="url" placeholder="路径">
+            </div>
+            <span class="col-sm-4 control-label" style="color:red;text-align:left" ng-show="isShowUrl">
+                <label ng-show="isShowUrl">{{errorMessage2}}</label>
+            </span>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="isUse" ng-model="isUse"> 是否使用
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="button" class="btn  btn-primary"
+                        ng-click="submit()">
+                    提交
+                </button>
+            </div>
+        </div>       
+    </div>
+</form>
+

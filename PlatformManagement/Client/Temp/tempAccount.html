@@ -1,0 +1,17 @@
+﻿<div ng-init="accountViewInit()" ng-controller="account">
+    <div class="am-cf am-padding am-padding-bottom-0">
+        <div class="am-fl am-cf">
+            <strong class="am-text-primary am-text-lg" ng-bind="titleCName"></strong> /
+            <small ng-bind="titleEName"></small>
+        </div>
+    </div>
+    <hr />
+    <div ng-toolbar ng-tool="toolbar" ng-value="value"></div>
+    <div class="am-g">
+        <div class="am-u-sm-12">
+            <form class="am-form">
+                <div ng-grid ng-value="value"></div>
+            </form>
+        </div>
+    </div>
+</div>
